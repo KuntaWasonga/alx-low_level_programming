@@ -3,8 +3,10 @@
  *  * main - Entry point
  *   *
  *    * Return: Always 0 (Success)
- *     */
-int main() {
+ * 
+ */
+int main(void)
+{
 	char charType;
 	int intType;
 	long int LongIntType;
@@ -17,5 +19,5 @@ int main() {
 	printf("Size of long long int: %zu byte(s)\n", sizeof(LongLongIntType));
 	printf("Size of float: %zu byte(s)\n", sizeof(floatType));
 
-	return 0;
+	return (0);
 }                        
