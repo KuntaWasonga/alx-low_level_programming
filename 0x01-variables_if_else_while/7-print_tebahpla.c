@@ -7,9 +7,10 @@
 int main(void)
 {
 		int i;
-		for(i='Z';i>='A';i--)
+
+		for (i = 'z' ; i >= 'z' ; i--)
 		{
-                    printf("%c",i);
+			printf("%c", i);
 		}
-		return 0;
+		return (0);
 }
