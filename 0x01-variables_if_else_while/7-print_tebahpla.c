@@ -1,8 +1,8 @@
 #include<stdio.h>
 /*
- * Main - Entry point
+ * main - prints the lowercase alphabet in reverse, followed by a new line.
  *
- * Return - Always 0 (success)
+ * return - Always 0 (success)
  */
 int main(void)
 {
