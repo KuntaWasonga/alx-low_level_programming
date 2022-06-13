@@ -16,12 +16,6 @@ void randomPasswordGeneration(int N)
 	int i = 0;
 	int randomizer = 0;
 
-	/*
-	 * Seed the random-number generator with current time so that the
-	 * numbers will be different every time
-	 */
-	srand((unsigned int)(time(NULL)));
-
 	/* Array of numbers */
 	char numbers[] = "0123456789";
 
@@ -35,10 +29,16 @@ void randomPasswordGeneration(int N)
 	char symbols[] = "!@#$^&*?";
 
 	/* Stores the random password */
-	char password[N];
+	char *password = malloc(N * sizeof(password));
 
 	/* To select the randomizer inside the loop */
 	randomizer = rand() % 4;
+	
+	/*
+	 * Seed the random-number generator with current time so that the
+	 * numbers will be different every time
+	 */
+        srand((unsigned int)(time(NULL)));
 
 	/* Iterate over the range [0, N] */
 	for (i = 0; i < N; i++)
@@ -68,6 +68,7 @@ void randomPasswordGeneration(int N)
 			printf("%c", password[i]);
 		}
 	}
+	free (password);
 }
 
 /**
