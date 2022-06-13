@@ -3,14 +3,14 @@
 /**
  * _strlen - Function that returns the length of a string
  * @s: string to be evaluated.
- * Return: returns value i.
+ * Return: returns length of string
  */
 
 int _strlen(char *s)
 {
-	size_t length = 0;
+	int length = 0;
 
-	while (*s++)
+	while (s[length] != '\0')
 		length++;
 
 	return (length);
