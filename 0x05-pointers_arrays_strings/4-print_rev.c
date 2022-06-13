@@ -3,19 +3,22 @@
 /**
  * print_rev - functions that prints a string in reverse followed by a new line
  * @s: string to be evaluated
- *
  */
 
 void print_rev(char *s)
 {
 	char tmp;
-	int i, l, rind;
+	int i, l = 0, rind;
 
-	l = _strlen(s);
+/* Determines length of string*/
+	while (s[i])
+		l++;
 
-	rind = l - 1;
-
-	for(i = 0; i < rind; i++)
+/*
+ * Gets characters in string one by one then swaps to the last
+ * and begins printing in reverse
+ */
+	for (i = 0; i < l - 1; i++)
 	{
 		tmp = s[i];
 		s[i] = s[rind];
