@@ -7,24 +7,19 @@
 
 void print_rev(char *s)
 {
-	char tmp;
-	int i = 0, l = 0, rind;
+	int i, j, length;
 
 /* Determines length of string*/
-	while (s[i])
-		l++;
+	while (s[i] != '\0')
+		i++;
 
+	length = i;
 /*
  * Gets characters in string one by one then swaps to the last
  * and begins printing in reverse
  */
-	for (i = 0; i < l - 1; i++)
-	{
-		tmp = s[i];
-		s[i] = s[rind];
-		s[rind] = tmp;
-		rind--;
-		_putchar(tmp);
-	}
+	for (j = length - 1; j >= 0; j--)
+		_putchar(s[j]);
+
 	_putchar('\n');
 }
