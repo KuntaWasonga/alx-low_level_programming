@@ -19,4 +19,4 @@ void iterate_wild(char **wildstr);
 char *postfix_match(char *str, char *postfix);
 int wildcmp(char *s1, char *s2);
 
-#endif _MAIN_H_
+#endif /* _MAIN_H_ */
