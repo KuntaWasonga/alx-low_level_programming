@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 				printf("Error\n");
 				return (1);
 			}
-			else
+			else if (num >= 0)
 			{
 				add += num;
 			}
