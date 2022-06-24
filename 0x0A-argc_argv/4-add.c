@@ -19,12 +19,12 @@ int main(int argc, char *argv[])
 		{
 			num = atoi(argv[i]);
 
-			if (num == 0)
+			if (num <= 0)
 			{
 				printf("Error\n");
 				return (1);
 			}
-			else if (num >= 0)
+			else
 			{
 				add += num;
 			}
