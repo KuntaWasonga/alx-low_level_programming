@@ -11,25 +11,25 @@
 
 int main(int argc, char *argv[])
 {
-	int i, num, add;
+	int i, j, sum = 0;
 
 	if (argc > 1)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			num = atoi(argv[i]);
+			for (j = 0; argv[i][j]; j++)
+			{
+				if (argv[i][j] < '0' || argv[i][j] > '9')
+				{
+					printf("Error\n");
+					return (1);
+				}
+			}
 
-			if (num <= 0)
-			{
-				printf("Error\n");
-				return (1);
-			}
-			else
-			{
-				add += num;
-			}
+			sum += atoi(argv[i]);
 		}
-		printf("%d\n", add);
+
+		printf("%d\n", sum);
 	}
 	else
 	{
