@@ -1,1 +1,1 @@
-This contains files on static libraries
+This contains files for static libraries
