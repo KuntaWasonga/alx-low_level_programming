@@ -1,12 +1,20 @@
+#include "lists.h"
+
+/**
+ * listint_len - a function that returns the number of elements in a list.
+ *
+ * @h: node
+ * Return: returns number of elements
+ */
+
 size_t listint_len(const listint_t *h)
 {
-	    listint_t *ptr=h;
-	        int count = 0;
-		    
-		    while (ptr != NULL)
-			        {
-					        ptr = ptr -> next;
-						        count++;
-							    }
-		        return(count);
+	size_t count = 0;
+
+	while (h != NULL)
+	{
+		h = h->next;
+		count++;
+	}
+	return (count);
 }
