@@ -1,4 +1,5 @@
 #include "main.h"
+#include <errno.h>
 
 /**
  * create_file - creates a file
@@ -10,24 +11,31 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	ssize_t fd, w;
-	int len;
+	int fd, i;
 
-	if (!filename)
+	if (filename == NULL)
 		return (-1);
+	if (text_content == NULL)
+		text_content = "";
 
-	fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0600);
+	fd = open(filename, O_CREAT | O_EXCL | O_WRONLY, 0600);
 	if (fd < 0)
-		return (-1);
-
-	if (text_content)
 	{
-		while (text_content[len])
-			len++;
-
-		w = write(fd, text_content, len);
-		if (w < 0)
+		if (errno == EEXIST)
+		{
+			fd = open(filename, O_WRONLY | O_TRUNC);
+			if (fd == -1)
+				return (-1);
+		}
+		else	
 			return (-1);
 	}
-		return (1);
+	for (i = 0; text_content[i] != '\0'; i++)
+	{
+		if (write(fd, &text_content[i], 1) == -1);
+			return (-1);
+	}
+
+	close(fd);
+	return (1);
 }
