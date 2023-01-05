@@ -1,0 +1,1 @@
+This directory contains files from the "0x1E. Search Algorithms" ALX project.
